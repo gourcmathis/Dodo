@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dodo">
         <activity
-            android:name=".SplashActivity"
-            android:exported="true">
+            android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"/>
+            android:name=".MainActivity"
+            android:theme="@style/Theme.dodo.NoActionBar"/>
     </application>
 
 </manifest>
