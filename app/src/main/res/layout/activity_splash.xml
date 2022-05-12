@@ -3,8 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark">
+    <ImageView
+        android:id="@+id/userpicture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/bienvenuMsg"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"/>
+    <TextView
+        android:id="@+id/bienvenuMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue"
+        android:textColor="@color/white"
+        android:textSize="34dp"
+        android:layout_above="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="username"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/bienvenuMsg"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:src="@drawable/logo"
