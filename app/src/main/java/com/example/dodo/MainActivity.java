@@ -1,5 +1,6 @@
 package com.example.dodo;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnTodoClickListen
 
 
         taskViewModel.getAllTasks().observe(this, tasks -> {
+
             recyclerViewAdapter = new RecyclerViewAdapter(tasks, this);
             recyclerView.setAdapter(recyclerViewAdapter);
         });
@@ -81,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements OnTodoClickListen
         });
 
 
+
+
     }
 
     private void showBottomSheetDialog() {
@@ -89,21 +93,18 @@ public class MainActivity extends AppCompatActivity implements OnTodoClickListen
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -117,8 +118,10 @@ public class MainActivity extends AppCompatActivity implements OnTodoClickListen
     }
 
     @Override
-    public void onTodoRadioButtonClick(TextView textView) {
-        textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+    public void onTodoRadioButtonClick(Task task, TextView textView) {
+        boolean done = task.isDone();
+        task.setDone(!done);
+        TaskViewModel.update(task);
     }
 
     @Override
@@ -126,5 +129,7 @@ public class MainActivity extends AppCompatActivity implements OnTodoClickListen
         TaskViewModel.delete(task);
         recyclerViewAdapter.notifyDataSetChanged();
     }
+
+
 
 }

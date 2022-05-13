@@ -39,6 +39,8 @@ public class BottomSheetFragment extends BottomSheetDialogFragment implements Vi
     private CalendarView calendarView;
     private Group calendarGroup;
     private Date dueDate;
+    private boolean done;
+
     Calendar calendar = Calendar.getInstance();
     private SharedViewModel sharedViewModel;
     private boolean isEdit;
@@ -129,7 +131,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment implements Vi
             if (!TextUtils.isEmpty(task) && dueDate != null && priority != null) {
                 Task myTask = new Task(task, priority,
                         dueDate, Calendar.getInstance().getTime(),
-                        false);
+                        done);
                 if (isEdit) {
                     Task updateTask = sharedViewModel.getSelectedItem().getValue();
 

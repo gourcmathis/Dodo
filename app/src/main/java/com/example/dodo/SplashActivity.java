@@ -15,13 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
-/*<<<<<<< HEAD
-public class SplashActivity extends AppCompatActivity {
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    TextView name;
-    ImageView userpicture;
-=======*/
+
 public class SplashActivity extends Activity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;

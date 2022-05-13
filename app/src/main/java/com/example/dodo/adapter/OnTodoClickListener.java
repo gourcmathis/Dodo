@@ -7,6 +7,6 @@ import com.example.dodo.model.Task;
 
 public interface OnTodoClickListener {
     void onTodoClick(Task task);
-    void onTodoRadioButtonClick(TextView textView);
+    void onTodoRadioButtonClick(Task task, TextView textView);
     void onTodoDeleteButtonClick(Task task);
 }

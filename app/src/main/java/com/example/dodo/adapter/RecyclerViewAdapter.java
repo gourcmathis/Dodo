@@ -2,6 +2,7 @@ package com.example.dodo.adapter;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         Utils.priorityColor(task)
         });
 
+
         holder.task.setText(task.getTask());
         holder.todayChip.setText(formatted);
         holder.todayChip.setTextColor(Utils.priorityColor(task));
@@ -99,7 +101,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }else if (id == R.id.todo_row_deleteButton) {
                 onTodoClickListener.onTodoDeleteButtonClick(currTask);
             }else if (id == R.id.todo_radio_button) {
-                onTodoClickListener.onTodoRadioButtonClick(textView);
+                onTodoClickListener.onTodoRadioButtonClick(currTask, textView);
             }
         }
 

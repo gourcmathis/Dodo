@@ -82,7 +82,7 @@ public class Task {
     }
 
     public void setDone(boolean done) {
-        isDone = done;
+        this.isDone = done;
     }
 
     @Override

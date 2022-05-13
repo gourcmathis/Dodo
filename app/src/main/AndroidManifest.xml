@@ -30,6 +30,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.dodo.NoActionBar"/>
+
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/Theme.dodo.NoActionBar"/>
+
     </application>
 
 </manifest>
